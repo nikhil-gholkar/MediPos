@@ -236,7 +236,7 @@ export const HomeTab: React.FC<HomeTabProps> = ({ medicalId }) => {
 
       {/* SECTION 2: LOW STOCK ALERTS */}
       <div className="space-y-2">
-        <h3 className="text-xs font-bold text-slate-700 uppercase tracking-wide flex items-center gap-1.5 text-amber-600">
+        <h3 className="text-xs font-bold text-amber-600 uppercase tracking-wide flex items-center gap-1.5 text-amber-600">
           <Package className="w-3.5 h-3.5" /> Depleted Stock Alerts
         </h3>
         <div className="space-y-2 max-h-60 overflow-y-auto pr-1">

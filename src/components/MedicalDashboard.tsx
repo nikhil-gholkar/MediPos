@@ -18,7 +18,7 @@ export const MedicalDashboard: React.FC = () => {
           <Package className="w-8 h-8" />
         </div>
         <h1 className="text-base font-black text-slate-900">Terminal Suspended</h1>
-        <p className="text-xs text-slate-400 font-medium mt-1.5 max-w-[280px]">
+        <p className="text-xs text-slate-400 font-medium mt-1.5 max-w-70">
           Access to this pharmacy workspace branch has been temporarily frozen by central headquarters. Please contact your system Superadmin.
         </p>
       </div>

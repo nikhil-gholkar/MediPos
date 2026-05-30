@@ -407,7 +407,7 @@ export const POSTab: React.FC<POSTabProps> = ({ medicalId }) => {
                 return (
                   <div key={idx} className="flex justify-between items-start text-slate-900 font-semibold leading-tight">
                     <div>
-                      <p className="max-w-[190px] truncate uppercase">{line.medicine.medicine_name}</p>
+                      <p className="max-w-47.5 truncate uppercase">{line.medicine.medicine_name}</p>
                       <p className="text-[9px] text-slate-400 italic font-medium">
                         ({s > 0 ? `${s}strp` : ''}{s > 0 && p > 0 ? '+' : ''}{p > 0 ? `${p}u` : ''})
                       </p>

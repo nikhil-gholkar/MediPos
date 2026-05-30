@@ -141,7 +141,7 @@ export const SuperadminDashboard: React.FC = () => {
           </div>
           <div>
             <h1 className="text-base font-bold text-slate-900">HQ Control Panel</h1>
-            <p className="text-[10px] text-slate-400 font-medium truncate max-w-[180px]">{user?.email}</p>
+            <p className="text-[10px] text-slate-400 font-medium truncate max-w-45">{user?.email}</p>
           </div>
         </div>
 
@@ -210,7 +210,7 @@ export const SuperadminDashboard: React.FC = () => {
           stores.map(store => (
             <Card key={store.id} className="border-0 shadow-sm rounded-xl overflow-hidden bg-white border-l-4 border-l-slate-200">
               <CardContent className="p-4 flex items-center justify-between text-xs">
-                <div className="space-y-1 max-w-[180px]">
+                <div className="space-y-1 max-w-45">
                   <div className="flex items-center gap-1.5">
                     <Store className="w-3.5 h-3.5 text-slate-400" />
                     <h3 className="font-bold text-slate-900 truncate">{store.name}</h3>

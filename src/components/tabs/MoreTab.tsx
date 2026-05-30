@@ -7,7 +7,7 @@ import { Label } from '../ui/label';
 import { Card, CardContent } from '../ui/card';
 import { 
   FileText, Users, ShieldCheck, LogOut, Smartphone, 
-  ChevronRight, ArrowLeft, Calendar, DollarSign, TrendingUp 
+  ChevronRight, ArrowLeft, TrendingUp 
 } from 'lucide-react';
 
 interface MoreTabProps {
@@ -138,7 +138,7 @@ export const MoreTab: React.FC<MoreTabProps> = ({ medicalId }) => {
           </div>
 
           {/* KPI Gross Summary revenue totals */}
-          <Card className="border-0 shadow-sm bg-gradient-to-br from-indigo-900 to-slate-950 text-white rounded-2xl">
+          <Card className="border-0 shadow-sm bg-linear-to-br from-indigo-900 to-slate-950 text-white rounded-2xl">
             <CardContent className="p-4 space-y-1">
               <p className="text-[10px] text-indigo-300 uppercase font-black tracking-wider flex items-center gap-1"><TrendingUp className="w-3 h-3" /> Period Gross Revenue</p>
               <p className="text-2xl font-black font-mono text-emerald-400">${totalPeriodRevenue.toFixed(2)}</p>

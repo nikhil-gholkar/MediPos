@@ -5,7 +5,7 @@ import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../ui/dialog';
 import { 
-  Plus, Search, Package, ChevronDown, ChevronUp, 
+  Plus, Search, ChevronDown, ChevronUp, 
   MapPin, Calendar, DollarSign, Layers, Loader2, Info 
 } from 'lucide-react';
 
@@ -186,7 +186,7 @@ export const InventoryTab: React.FC<InventoryTabProps> = ({ medicalId }) => {
                 onClick={() => setExpandedCardId(isCardExpanded ? null : item.id)}
                 className="p-3.5 flex items-center justify-between text-xs cursor-pointer select-none hover:bg-slate-50/40"
               >
-                <div className="space-y-0.5 max-w-[220px]">
+                <div className="space-y-0.5 max-w-55">
                   <h3 className="font-bold text-slate-900 truncate">{item.medicine_name}</h3>
                   <p className="text-[10px] text-slate-400 italic truncate">{item.generic_name || 'No compound details mapped'}</p>
                 </div>
