@@ -49,48 +49,48 @@ export const MedicalDashboard: React.FC = () => {
           </TabsContent>
         </div>
 
-      {/* FIXED PERMANENT NATIVE BOTTOM APP NAV DOCK */}
-        <div className="fixed bottom-0 left-0 right-0 z-50 px-4 pb-6 pt-2 w-full max-w-md mx-auto bg-linear-to-t from-slate-50 via-slate-50/95 to-transparent pointer-events-none">
+   {/* FIXED PERMANENT NATIVE BOTTOM APP NAV DOCK */}
+        <div className="fixed bottom-0 left-0 right-0 z-50 px-4 pb-6 pt-2 w-full max-w-md mx-auto bg-gradient-to-t from-slate-50 via-slate-50/95 to-transparent pointer-events-none">
           <div className="bg-slate-900/95 backdrop-blur-md border border-slate-800 rounded-2xl p-1.5 shadow-[0_16px_36px_rgba(0,0,0,0.28)] pointer-events-auto">
             
-            {/* 🛠️ ALIGNMENT FIX: Added item centering and explicit h-12 container limits */}
-            <TabsList className="grid grid-cols-4 w-full h-12 bg-transparent border-0 p-0 gap-1 items-center justify-center overflow-hidden">
+            {/* 🛠️ ALIGNMENT TRACK FIX: Explicitly centered with structural flex resets */}
+            <TabsList className="grid grid-cols-4 w-full h-14 bg-transparent border-0 p-0 gap-1 items-center justify-items-stretch overflow-hidden">
               
               {/* Trigger Item 1: Home Dashboard */}
-              {/* 🛠️ ALIGNMENT FIX: Used flex-col items-center justify-center to lock positions */}
+              {/* 🛠️ UNEVEN CAPSULE FIX: Standardized height using inline-flex and forced uniform padding controls */}
               <TabsTrigger 
                 value="dashboard" 
-                className="rounded-xl text-[10px] font-black flex flex-col items-center justify-center gap-0.5 w-full h-full border-0 text-slate-400 hover:text-slate-200 data-[state=active]:bg-white data-[state=active]:text-indigo-600 data-[state=active]:scale-[1.01] shadow-none transition-all duration-200 focus-visible:outline-none focus-visible:ring-0"
+                className="rounded-xl text-xs font-black flex flex-col items-center justify-center gap-0.5 w-full h-full p-0 border-0 text-slate-400 hover:text-slate-200 shadow-none transition-all duration-200 focus-visible:outline-none focus-visible:ring-0 data-[state=active]:bg-white data-[state=active]:text-indigo-600 data-[state=active]:inline-flex data-[state=active]:h-full data-[state=active]:items-center data-[state=active]:justify-center data-[state=active]:p-0 data-[state=active]:scale-100"
               >
-                <LayoutDashboard className="w-4 h-4 shrink-0" />
-                <span className="block text-center leading-none tracking-tight">Home</span>
+                <LayoutDashboard className="w-5 h-5 shrink-0" />
+                <span className="block text-center leading-none tracking-tight font-extrabold mt-0.5">Home</span>
               </TabsTrigger>
 
               {/* Trigger Item 2: POS Billing */}
               <TabsTrigger 
                 value="checkout" 
-                className="rounded-xl text-[10px] font-black flex flex-col items-center justify-center gap-0.5 w-full h-full border-0 text-slate-400 hover:text-slate-200 data-[state=active]:bg-white data-[state=active]:text-indigo-600 data-[state=active]:scale-[1.01] shadow-none transition-all duration-200 focus-visible:outline-none focus-visible:ring-0"
+                className="rounded-xl text-xs font-black flex flex-col items-center justify-center gap-0.5 w-full h-full p-0 border-0 text-slate-400 hover:text-slate-200 shadow-none transition-all duration-200 focus-visible:outline-none focus-visible:ring-0 data-[state=active]:bg-white data-[state=active]:text-indigo-600 data-[state=active]:inline-flex data-[state=active]:h-full data-[state=active]:items-center data-[state=active]:justify-center data-[state=active]:p-0 data-[state=active]:scale-100"
               >
-                <ShoppingCart className="w-4 h-4 shrink-0" />
-                <span className="block text-center leading-none tracking-tight">POS</span>
+                <ShoppingCart className="w-5 h-5 shrink-0" />
+                <span className="block text-center leading-none tracking-tight font-extrabold mt-0.5">POS</span>
               </TabsTrigger>
 
               {/* Trigger Item 3: Stock */}
               <TabsTrigger 
                 value="inventory" 
-                className="rounded-xl text-[10px] font-black flex flex-col items-center justify-center gap-0.5 w-full h-full border-0 text-slate-400 hover:text-slate-200 data-[state=active]:bg-white data-[state=active]:text-indigo-600 data-[state=active]:scale-[1.01] shadow-none transition-all duration-200 focus-visible:outline-none focus-visible:ring-0"
+                className="rounded-xl text-xs font-black flex flex-col items-center justify-center gap-0.5 w-full h-full p-0 border-0 text-slate-400 hover:text-slate-200 shadow-none transition-all duration-200 focus-visible:outline-none focus-visible:ring-0 data-[state=active]:bg-white data-[state=active]:text-indigo-600 data-[state=active]:inline-flex data-[state=active]:h-full data-[state=active]:items-center data-[state=active]:justify-center data-[state=active]:p-0 data-[state=active]:scale-100"
               >
-                <Package className="w-4 h-4 shrink-0" />
-                <span className="block text-center leading-none tracking-tight">Stock</span>
+                <Package className="w-5 h-5 shrink-0" />
+                <span className="block text-center leading-none tracking-tight font-extrabold mt-0.5">Stock</span>
               </TabsTrigger>
 
               {/* Trigger Item 4: More */}
               <TabsTrigger 
                 value="more" 
-                className="rounded-xl text-[10px] font-black flex flex-col items-center justify-center gap-0.5 w-full h-full border-0 text-slate-400 hover:text-slate-200 data-[state=active]:bg-white data-[state=active]:text-indigo-600 data-[state=active]:scale-[1.01] shadow-none transition-all duration-200 focus-visible:outline-none focus-visible:ring-0"
+                className="rounded-xl text-xs font-black flex flex-col items-center justify-center gap-0.5 w-full h-full p-0 border-0 text-slate-400 hover:text-slate-200 shadow-none transition-all duration-200 focus-visible:outline-none focus-visible:ring-0 data-[state=active]:bg-white data-[state=active]:text-indigo-600 data-[state=active]:inline-flex data-[state=active]:h-full data-[state=active]:items-center data-[state=active]:justify-center data-[state=active]:p-0 data-[state=active]:scale-100"
               >
-                <Menu className="w-4 h-4 shrink-0" />
-                <span className="block text-center leading-none tracking-tight">More</span>
+                <Menu className="w-5 h-5 shrink-0" />
+                <span className="block text-center leading-none tracking-tight font-extrabold mt-0.5">More</span>
               </TabsTrigger>
 
             </TabsList>
