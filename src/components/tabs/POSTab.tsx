@@ -4,7 +4,7 @@ import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 import { CheckoutScreen } from './CheckoutScreen';
-import { Search, ShoppingBag, Plus, Minus, Trash2, Loader2, Sparkles } from 'lucide-react';
+import { Search, ShoppingBag, Plus, Minus, Trash2, Loader2 } from 'lucide-react';
 
 interface POSTabProps {
   medicalId: string | null;
