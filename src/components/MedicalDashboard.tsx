@@ -13,12 +13,12 @@ export const MedicalDashboard: React.FC = () => {
   // Guard Clause: Frozen State Layout
   if (!isMedicalEnabled) {
     return (
-      <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center px-6 text-center max-w-sm mx-auto border-x border-slate-200/60">
+      <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center px-6 text-center w-full max-w-md mx-auto">
         <div className="w-14 h-14 bg-rose-50 text-rose-600 rounded-2xl flex items-center justify-center mb-4 border border-rose-100 shadow-sm">
           <ShieldAlert className="w-6 h-6" />
         </div>
         <h1 className="text-base font-black text-slate-900 tracking-tight">Terminal Frozen</h1>
-        <p className="text-xs text-slate-400 font-medium mt-1.5 leading-relaxed max-w-62.5">
+        <p className="text-xs text-slate-400 font-medium mt-1.5 leading-relaxed max-w-[250px]">
           Access to this local branch instance has been suspended by corporate headquarters. Please reach out to your systems administrator.
         </p>
       </div>
@@ -26,13 +26,15 @@ export const MedicalDashboard: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50/50 max-w-sm mx-auto border-x border-slate-200/80 shadow-2xl relative flex flex-col overflow-hidden">
+    // 1. RE-ENGINEERED ROOT WRAPPER: Removed strict max-w-sm restriction to let it breathe natively on phone viewports
+    <div className="min-h-screen bg-slate-50/50 w-full max-w-md mx-auto shadow-none relative flex flex-col overflow-x-hidden">
       
       {/* NATIVE SYSTEM TABS ROUTER CONTAINER LAYER */}
       <Tabs defaultValue="dashboard" className="w-full flex-1 flex flex-col justify-between">
         
         {/* INTERMEDIARY SCROLLABLE HOOD CONTROLLER */}
-        <div className="flex-1 overflow-y-auto pb-24">
+        {/* Expanded padding-bottom so content never hides behind the floating navigation island */}
+        <div className="flex-1 overflow-y-auto pb-32">
           <TabsContent value="dashboard" className="m-0 focus-visible:outline-none focus-visible:ring-0">
             <HomeTab medicalId={medicalId} />
           </TabsContent>
@@ -47,52 +49,53 @@ export const MedicalDashboard: React.FC = () => {
           </TabsContent>
         </div>
 
-        {/* FIXED PERMANENT BOTTOM APP NAV DOCK */}
-        {/* 'fixed' locks it to the viewport, 'w-full max-w-sm' matches the mobile layout frame width */}
-        <div className="fixed bottom-4 left-0 right-0 z-50 px-4 w-full max-w-sm mx-auto pointer-events-none">
-          <div className="bg-slate-900/95 backdrop-blur-md border border-slate-800 rounded-2xl p-1.5 shadow-[0_12px_32px_rgba(0,0,0,0.24)] pointer-events-auto">
-            <TabsList className="grid grid-cols-4 w-full h-11 bg-transparent border-0 p-0 gap-1">
+      {/* FIXED PERMANENT NATIVE BOTTOM APP NAV DOCK */}
+        <div className="fixed bottom-0 left-0 right-0 z-50 px-4 pb-6 pt-2 w-full max-w-md mx-auto bg-gradient-to-t from-slate-50 via-slate-50/95 to-transparent pointer-events-none">
+          <div className="bg-slate-900/95 backdrop-blur-md border border-slate-800 rounded-2xl p-1.5 shadow-[0_16px_36px_rgba(0,0,0,0.28)] pointer-events-auto">
+            
+            {/* 🛠️ ALIGNMENT FIX: Added item centering and explicit h-12 container limits */}
+            <TabsList className="grid grid-cols-4 w-full h-12 bg-transparent border-0 p-0 gap-1 items-center justify-center overflow-hidden">
               
               {/* Trigger Item 1: Home Dashboard */}
+              {/* 🛠️ ALIGNMENT FIX: Used flex-col items-center justify-center to lock positions */}
               <TabsTrigger 
                 value="dashboard" 
-                className="rounded-xl text-[9px] font-bold flex flex-col items-center justify-center gap-0.5 h-full transition-all duration-200 border-0 text-slate-400 hover:text-slate-200 data-[state=active]:bg-white data-[state=active]:text-indigo-600 data-[state=active]:scale-[1.02] shadow-none"
+                className="rounded-xl text-[10px] font-black flex flex-col items-center justify-center gap-0.5 w-full h-full border-0 text-slate-400 hover:text-slate-200 data-[state=active]:bg-white data-[state=active]:text-indigo-600 data-[state=active]:scale-[1.01] shadow-none transition-all duration-200 focus-visible:outline-none focus-visible:ring-0"
               >
-                <LayoutDashboard className="w-4 h-4" />
-                <span>Home</span>
+                <LayoutDashboard className="w-4 h-4 shrink-0" />
+                <span className="block text-center leading-none tracking-tight">Home</span>
               </TabsTrigger>
 
-              {/* Trigger Item 2: POS Billing Checkout */}
+              {/* Trigger Item 2: POS Billing */}
               <TabsTrigger 
                 value="checkout" 
-                className="rounded-xl text-[9px] font-bold flex flex-col items-center justify-center gap-0.5 h-full transition-all duration-200 border-0 text-slate-400 hover:text-slate-200 data-[state=active]:bg-white data-[state=active]:text-indigo-600 data-[state=active]:scale-[1.02] shadow-none"
+                className="rounded-xl text-[10px] font-black flex flex-col items-center justify-center gap-0.5 w-full h-full border-0 text-slate-400 hover:text-slate-200 data-[state=active]:bg-white data-[state=active]:text-indigo-600 data-[state=active]:scale-[1.01] shadow-none transition-all duration-200 focus-visible:outline-none focus-visible:ring-0"
               >
-                <ShoppingCart className="w-4 h-4" />
-                <span>POS</span>
+                <ShoppingCart className="w-4 h-4 shrink-0" />
+                <span className="block text-center leading-none tracking-tight">POS</span>
               </TabsTrigger>
 
-              {/* Trigger Item 3: Stock Inventory Manager */}
+              {/* Trigger Item 3: Stock */}
               <TabsTrigger 
                 value="inventory" 
-                className="rounded-xl text-[9px] font-bold flex flex-col items-center justify-center gap-0.5 h-full transition-all duration-200 border-0 text-slate-400 hover:text-slate-200 data-[state=active]:bg-white data-[state=active]:text-indigo-600 data-[state=active]:scale-[1.02] shadow-none"
+                className="rounded-xl text-[10px] font-black flex flex-col items-center justify-center gap-0.5 w-full h-full border-0 text-slate-400 hover:text-slate-200 data-[state=active]:bg-white data-[state=active]:text-indigo-600 data-[state=active]:scale-[1.01] shadow-none transition-all duration-200 focus-visible:outline-none focus-visible:ring-0"
               >
-                <Package className="w-4 h-4" />
-                <span>Stock</span>
+                <Package className="w-4 h-4 shrink-0" />
+                <span className="block text-center leading-none tracking-tight">Stock</span>
               </TabsTrigger>
 
-              {/* Trigger Item 4: More Option Menus */}
+              {/* Trigger Item 4: More */}
               <TabsTrigger 
                 value="more" 
-                className="rounded-xl text-[9px] font-bold flex flex-col items-center justify-center gap-0.5 h-full transition-all duration-200 border-0 text-slate-400 hover:text-slate-200 data-[state=active]:bg-white data-[state=active]:text-indigo-600 data-[state=active]:scale-[1.02] shadow-none"
+                className="rounded-xl text-[10px] font-black flex flex-col items-center justify-center gap-0.5 w-full h-full border-0 text-slate-400 hover:text-slate-200 data-[state=active]:bg-white data-[state=active]:text-indigo-600 data-[state=active]:scale-[1.01] shadow-none transition-all duration-200 focus-visible:outline-none focus-visible:ring-0"
               >
-                <Menu className="w-4 h-4" />
-                <span>More</span>
+                <Menu className="w-4 h-4 shrink-0" />
+                <span className="block text-center leading-none tracking-tight">More</span>
               </TabsTrigger>
 
             </TabsList>
           </div>
         </div>
-
       </Tabs>
     </div>
   );
