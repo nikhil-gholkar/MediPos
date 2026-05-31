@@ -18,7 +18,7 @@ export const MedicalDashboard: React.FC = () => {
           <ShieldAlert className="w-6 h-6" />
         </div>
         <h1 className="text-base font-black text-slate-900 tracking-tight">Terminal Frozen</h1>
-        <p className="text-xs text-slate-400 font-medium mt-1.5 leading-relaxed max-w-[250px]">
+        <p className="text-xs text-slate-400 font-medium mt-1.5 leading-relaxed max-w-62.5">
           Access to this local branch instance has been suspended by corporate headquarters. Please reach out to your systems administrator.
         </p>
       </div>
@@ -50,7 +50,7 @@ export const MedicalDashboard: React.FC = () => {
         </div>
 
       {/* FIXED PERMANENT NATIVE BOTTOM APP NAV DOCK */}
-        <div className="fixed bottom-0 left-0 right-0 z-50 px-4 pb-6 pt-2 w-full max-w-md mx-auto bg-gradient-to-t from-slate-50 via-slate-50/95 to-transparent pointer-events-none">
+        <div className="fixed bottom-0 left-0 right-0 z-50 px-4 pb-6 pt-2 w-full max-w-md mx-auto bg-linear-to-t from-slate-50 via-slate-50/95 to-transparent pointer-events-none">
           <div className="bg-slate-900/95 backdrop-blur-md border border-slate-800 rounded-2xl p-1.5 shadow-[0_16px_36px_rgba(0,0,0,0.28)] pointer-events-auto">
             
             {/* 🛠️ ALIGNMENT FIX: Added item centering and explicit h-12 container limits */}

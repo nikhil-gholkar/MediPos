@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../lib/supabase';
-import { Card, CardContent } from '../ui/card';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { Loader2, AlertCircle, Package, TrendingUp, DollarSign, Sparkles, Flame } from 'lucide-react';
 
